@@ -20,14 +20,19 @@ var pool=mysql.createPool({
 
 console.log('yes');
 //根据表单的请求准备路由
-server.get('/add',(req,res)=>{
-    console.log('no');
+server.post('/add',(req,res)=>{
+
     var obj=req.body;
     console.log(obj);
+    pool.query('INSERT INTO emp set ?',[obj],(err,result)=>{
+        if(err) throw err;
+        console.log(result.affectedRows)
+    })
+
 });
 
 //根据表单的请求准备路由
-server.post('/add',(req,res)=>{
+/*server.post('/add',(req,res)=>{
     //获取浏览器端post请求的数据
     var obj=req.body;
     //将数据插入到数据库
@@ -38,4 +43,4 @@ server.post('/add',(req,res)=>{
             res.send({code:200,msg:'add suc'});
         }
     });
-});
+});*/
