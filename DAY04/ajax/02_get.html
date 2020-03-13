@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+<div>
+    用户：<input type="text" id="uname">
+</div>
+<div>
+    密码：<input type="password" id="upwd">
+</div>
+<input type="button" value="登录" onclick="login()">
+<div id="d1"></div>
+<script>
+    function login() {
+
+        //创建异步对象
+        var xhr=new XMLHttpRequest();
+        //绑定监听接受请求
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4&&xhr.status==200){
+//                 0：未初始化。尚未调用open()方法。
+// 1：启动。已经调用open()方法，但尚未调用send()方法。
+// 2：发送。已经调用send()方法，但尚未接收到响应。
+// 3：接收。已经接收到部分响应数据。
+// 4：完成。已经接收到全部响应数据，而且已经可以在客户端使用了。
+                d1.innerHTML=xhr.responseText;
+            }
+
+        }
+        //打开连接，创建请求
+        var url="/user/login?uname="+uname.value+"&upwd="+upwd.value;
+        xhr.open("get",url,true);
+        //发送请求
+        xhr.send();
+
+    }
+</script>
+
+</body>
+</html>

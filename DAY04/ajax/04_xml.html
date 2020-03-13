@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+<input type="button" value="异步获得xml数据" onclick="getXml()">
+<div id="d1"></div>
+<script>
+    function getXml() {
+        console.log("111");
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4&&xhr.status==200) {
+                var result = xhr.responseXML;
+                var students = result.getElementsByTagName("student");
+                console.log("222");
+                console.log(students);
+                var htmlcode = "<table border='0.5px' bgcolor='aqua'>"
+                for (var i = 0; i < students.length; i++) {
+                    var name = students[i].getElementsByTagName("name")[0];
+                    var age = students[i].getElementsByTagName("age")[0];
+                    var gender = students[i].getElementsByTagName("gender")[0];
+                    htmlcode += "<tr><td>" + name.innerHTML + "</td><td>" + age.innerHTML + "</td><td>" + gender.innerHTML + "</td></tr>";
+                }
+            htmlcode+="</table>";
+            d1.innerHTML=htmlcode;
+            }
+        }
+        xhr.open("get","student.xml",true);
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>

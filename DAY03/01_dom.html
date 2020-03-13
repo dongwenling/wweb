@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+<input id="t1" type="text">
+<input type="button" onclick="showMsg()" value="显示">
+<script>
+
+    function showMsg() {
+
+        console.log(t1.value);
+    }
+    t1.value="123";
+    d1.innerHTML="H5支持直接使用id表示标签对象";
+    var elm1=document.getElementById("d1");
+    var elm2=document.getElementById("d2");
+    elm1.innerHTML="<a href='http://www.baidu.com'>百度</a>";
+    elm2.innerHTML="<table><tr><th>1</th><th>2</th></tr>" +
+        "<tr><td>1</td><td>2</td></tr></table>";
+</script>
+</body>
+</html>
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title></title>-->
+<!--    <meta charset="utf-8"/>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="d1"></div>-->
+<!--<div id="d2"></div>-->
+<!--<input id="t1" type="text">-->
+<!--<input type="button" onclick="showMsg()" value="显示">-->
+<!--<script>-->
+<!--    function showMsg(){-->
+<!--        console.log(t1.value);-->
+<!--    }-->
+<!--    t1.value="123";-->
+<!--    console.log(d1);-->
+<!--    d1.innerHTML="H5支持直接使用id表示标签对象";-->
+<!--    			var elem1=document.getElementById("d1");-->
+<!--    			console.log(elem1);-->
+<!--    			var elem2=document.getElementById("d2");-->
+<!--    			console.log(elem2);-->
+<!--    			elem1.innerHTML="<a href='http://www.baidu.com'>百度</a>"-->
+<!--    			elem2.innerHTML="<table><tr><td>1</td>"-->
+<!--    			+"<td>2</td><td>3</td></tr><tr><td>4</td>"-->
+<!--    			+"<td>5</td><td>6</td></tr><tr><td>7</td>"-->
+<!--    			+"<td>8</td><td>9</td></tr></table>";-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+

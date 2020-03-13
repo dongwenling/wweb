@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xhr</title>
+</head>
+<body>
+<script>
+    //创建异步请求
+    var xhr=new XMLHttpRequest();
+    console.log(xhr.readyState);
+    //绑定监听事件（接受请求）
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&&xhr.status==200){
+            var result=xhr.responseText;
+            console.log(result);
+        }
+    }
+    //打开链接（创建请求）
+    xhr.open("get","/demo/ajaxDemo",true);
+    //发送请求
+    xhr.send();
+
+</script>
+
+</body>
+</html>

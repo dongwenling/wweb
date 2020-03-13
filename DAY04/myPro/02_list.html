@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body onload="loadUser()">
+<table>
+    <thead>
+    <th>登录名称</th>
+    <th>电子邮箱</th>
+    <th>联系方式</th>
+    <th>用户名称</th>
+    <th>用户性别</th>
+    <th>操作</th>
+    </thead>
+    <tbody id="listbody"></tbody>
+</table>
+<script>
+    function loadUser() {
+console.log("111");
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+          var result=xhr.responseText;
+          var htmlCode;
+          if(xhr.readyState==4&&xhr.status==200){
+              console.log("222");
+              var arr=JSON.parse(result);
+              var htmlc="";
+
+              for(var i=0;i<arr.length;i++){
+                  htmlc+="<tr>";
+                  if(arr[i].gender==1){
+                      arr[i].gender="男";
+                  }else {
+                      arr[i].gender="女";
+                  }
+                  htmlc+="<td>"+arr[i].uname+"</td><td>"+arr[i].email+"</td><td>"+arr[i].phone+"</td><td>"+arr[i].user_name+"</td><td>"+arr[i].gender+"</td><td>"+"<a href='javascript:delUser("+arr[i].uid+")'>删除</a>"+"</td>";
+console.log("333");
+              }
+              htmlc+="</tr>";
+
+          }
+          listbody.innerHTML=htmlc;
+        };
+        xhr.open("post","/user/list",true);
+        xhr.send();
+        
+    }
+    function delUser(num) {
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function () {
+            var result=xhr.responseText;
+            if(xhr.readyState==4&&xhr.status==200){
+                console.log(result);
+            }
+
+        }
+        xhr.open("get","/user/delete?uid="+num,true);
+        xhr.send(null);
+
+
+    }
+</script>
+
+
+</body>
+</html>

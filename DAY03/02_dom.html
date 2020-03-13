@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sc</title>
+</head>
+<body>
+<div>
+    <input id="t1" type="text" onfocus="show1()" onblur="show2()">
+    <span id="msg"></span>
+</div>
+<script>
+    function show1() {
+        msg.innerHTML="用户名在6-12位之间";
+    }
+    function show2() {
+
+        var t=t1.value;
+        if(t==""){
+            msg.innerHTML="用户名必须填写";
+        }else if(t.length>6 && t.length<12){
+            msg.innerHTML="输入正确";
+        }else {
+            msg.innerHTML="输入错误";
+        }
+    }
+</script>
+
+</body>
+</html>
