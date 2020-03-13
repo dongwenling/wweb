@@ -24,9 +24,8 @@ router.get('/login',(req,res)=>{
 });
 //用户注册
 router.post('/reg',(req,res)=>{
+    console.log("reg")
     var obj=req.body;
-    console.log(req);
-    console.log(obj);
     var $uname=obj.uname;
     var $upwd=obj.upwd;
     var $email=obj.email;
@@ -57,12 +56,17 @@ router.post('/reg',(req,res)=>{
 });
 //用户修改
 router.post('/update',(req,res)=>{
+    console.log("update");
     var obj=req.body;
     var $uid=obj.uid;
     var $email=obj.email;
     var $phone=obj.phone;
     var $user_name=obj.user_name;
     var $gender=obj.gender;
+    var $uname=obj.uname;
+    var $upwd=obj.upwd;
+    console.log("aaaa"+$uid);
+    console.log($uname);
     console.log($uid,$email,$phone,$user_name,$gender);
     if(!$uid){
         res.send({code:401,msg:'uid required'});
@@ -72,10 +76,10 @@ router.post('/update',(req,res)=>{
         res.send({code:402,msg:'email required'});
         return;
     }
-    if(!$phone){
-        res.send({code:403,msg:'phone required'});
-        return;
-    }
+    // if(!$phone){
+    //     res.send({code:403,msg:'phone required'});
+    //     return;
+    // }
     if(!$user_name){
         res.send({code:404,msg:'user_name required'});
         return;
@@ -84,7 +88,7 @@ router.post('/update',(req,res)=>{
         res.send({code:405,msg:'gender required'});
         return;
     }
-    pool.query('update xz_user set email=?,  phone=? ,user_name=? , gender=? where uid=?',[$email,$phone,$user_name,$gender,$uid],(err,result)=>{
+    pool.query('update xz_user set email=?,  uname=? ,user_name=? , gender=? , upwd=? where uid=?',[$email,$uname,$user_name,$gender,$upwd,$uid],(err,result)=>{
         if (err) throw err;
         if(result.affectedRows>0){
             res.send({code:200,msg:"update suc"});

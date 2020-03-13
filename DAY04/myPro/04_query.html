@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body onload="getInfo()">
+<h3>修改页面信息</h3>
+<div>
+    登录名称<input type="text" id="uname">
+</div>
+<div>
+    登录密码<input type="text" id="upwd">
+</div>
+<div>
+    用户邮箱<input type="text" id="email">
+</div>
+<div>
+    真实姓名<input type="text" id="user_name">
+</div>
+<div>
+    联系方式 <input type="text" id="phone">
+</div>
+<div>
+    <input type="radio" name="gender" value="1" id="man"><label for="man">男</label>
+    <input type="radio" name="gender" value="0" id="wman"><label for="wman">女</label>
+</div>
+<div>
+    <input type="button" onclick="mod()" value="修改">
+</div>
+<script>
+    var uid="";
+    function getInfo() {
+        console.log("111");
+        var urlP=new URLSearchParams(location.search);
+        uid=urlP.get('uid');
+console.log(uid);
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4&&xhr.status==200){
+                var result=xhr.responseText;
+                var arr=JSON.parse(result);
+                uname.value=arr[0].uname;
+                upwd.value=arr[0].upwd;
+                email.value=arr[0].email;
+                user_name.value=arr[0].user_name;
+
+                if(arr[0].gender==1){
+                    man.checked=true;
+                }else {
+                    wman.checked=true;
+                }
+            }
+        }
+         xhr.open("get","/user/detail?uid="+uid,true);
+         xhr.send(null);
+    }
+    function mod() {
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4&&xhr.status==200){
+                console.log("333")
+                var result=xhr.responseText;
+                console.log(result);
+            }
+        }
+        var $uname=uname.value;
+        var $upwd=upwd.value;
+        var $email=email.value;
+        var $user_name=user_name.value;
+        if(man.checked==true){
+            $gender=1;
+        }else{
+            $gender=0;
+        }
+        xhr.open("post","/user/update",true);
+        var formdate="uname="+$uname+"&upwd="+$upwd+"&email="+$email+"&user_name="+$user_name+"&gender="+$gender+"&uid="+uid;
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send(formdate);
+
+    }
+</script>
+
+
+
+
+</body>
+</html>
