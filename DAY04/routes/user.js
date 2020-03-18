@@ -124,8 +124,10 @@ console.log("5555555");
     pool.query('delete from xz_user where uid=?',[$uid],(err,result)=>{
         if (err) throw err;
         if(result.affectedRows>0){
-            res.send({code:200,msg:"删除成功"});
-        }
+            res.send("1");
+        }else {
+            res.send("0");
+            }
     });
 
 });

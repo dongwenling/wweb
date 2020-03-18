@@ -35,7 +35,7 @@ console.log("111");
                   }else {
                       arr[i].gender="女";
                   }
-                  htmlc+="<td>"+arr[i].uname+"</td><td>"+arr[i].email+"</td><td>"+arr[i].phone+"</td><td>"+arr[i].user_name+"</td><td>"+arr[i].gender+"</td><td>"+"<a href='javascript:delUser("+arr[i].uid+")'>删除</a>"+"</td>";
+                  htmlc+="<td>"+arr[i].uname+"</td><td>"+arr[i].email+"</td><td>"+arr[i].phone+"</td><td>"+arr[i].user_name+"</td><td>"+arr[i].gender+"</td><td>"+"<a href='javascript:delUser("+arr[i].uid+")'>删除</a><a href='./04_query.html?uid="+arr[i].uid+"'>修改</a>"+"</td>";
 console.log("333");
               }
               htmlc+="</tr>";

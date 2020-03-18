@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        #container{
+            width: 1000px;
+            height: 560px;
+            margin:10px auto ;
+            background-image: url("register/bg.png");
+        }
+        #container div{
+            width: 280px;
+            height: 269px;
+            background: rgba(0,0,0,0.3);
+            margin-top: 160px;
+            margin-left: 580px;
+        }
+        #container div table{
+            width: 100%;
+        }
+
+        div #lgt tr td h4{
+            color: white;
+        }
+        div #lgt tr td a{
+            color: white;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        input.uname,input.upwd{
+            width: 100%;height: 36px;
+            margin-bottom: 15px;
+            border: 0;outline: 0;
+            box-sizing: border-box;
+            background: #fff url("register/mm.png") no-repeat 96% center;
+        }
+        input.upwd{
+        background-image: url("register/yhm.png");
+        }
+        div #lgt tr td  label{
+            color: white;
+        }
+        div #lgt tr td span{
+            color: white;
+        }
+        div #lgt tr td button{
+            width: 100%;
+            height: 32px;
+            background: cornflowerblue;
+            border: 0;outline: 0;
+            margin-top: 15px;
+            color: white;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <table></table>
+    <div>
+        <table id="lgt">
+            <tr>
+                <td><h4>登录学子商城</h4></td>
+                <td><a href="#">新用户注册</a></td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" class="uname" placeholder="请输入用户名"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" class="upwd" placeholder="请输入密码"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="lg"><label for="lg">自动登录</label></td>
+                <td><span>忘记密码</span></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button>登录</button></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
