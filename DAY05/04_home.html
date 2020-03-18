@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+</head>
+<style type="text/css">
+    *{margin: 0;padding: 0}
+    ul{
+        list-style: none;
+    }
+    .banner{
+        width: 1000px;height: 400px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .bannerin{
+        overflow: hidden;
+
+
+    }
+    .ck-side{
+        border-radius: 8px;
+        width: 40px;
+        height: 80px;
+        background: rgba(200,200,200,0.3)url("index/arrow-left.png") no-repeat center center;
+        position: absolute;
+        top:160px;
+
+    }
+    .left{
+        left: 5px;
+    }
+    .right{
+        background-image: url("index/arrow-right.png");
+        right: 5px;
+    }
+    .bot{
+        position: absolute;
+        left: 480px;
+        bottom:20px;
+    }
+    .bot li{
+        width: 10px;height: 10px;
+        border-radius: 50%;
+        background: #fff;
+        margin-left: 5px;
+        float: left;
+    }
+    .bot .sel{
+        background: cornflowerblue;
+    }
+
+</style>
+<body>
+<div class="banner">
+
+        <ul class="bannerin">
+            <li>
+                <a href="#">
+                    <img src="index/banner1.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="index/banner2.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="index/banner3.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="index/banner4.png" alt="">
+                </a>
+            </li>
+        </ul>
+
+    <div>
+        <a href="#"  class="ck-side left"></a>
+    </div>
+    <div>
+        <a href="#" class="ck-side right"></a>
+    </div>
+    <ul class="bot">
+        <li class="sel"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</div>
+</body>
+</html>
