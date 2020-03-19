@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+</head>
+<style type="text/css">
+    *{margin: 0;padding:  0}
+     div{
+        border: #ff2a00 1px solid;
+         box-sizing: border-box;
+
+    }
+    #container{
+        width: 1000px;
+        margin: 0 auto;
+
+    }
+    #container::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    ul{
+        list-style: none;
+    }
+    ul a{
+        text-decoration: none;
+    }
+    ul li{
+        border: #4dc71f 1px solid;
+    }
+
+    .left,.middle,.right,#container img{
+        float: left;
+    }
+    #container img{
+        box-sizing: border-box;
+        padding: 5px;
+    }
+    @media screen and (min-width: 900px){
+        #container {
+            width:1000px;
+            margin: 0 auto;
+
+        }
+        .left,.right{width:20%}
+        .middle{width: 60%}
+        img{width: 25%}
+    }
+    @media screen and (min-width: 700px ) and (max-width: 900px){
+        #container {
+            width:800px;
+            margin: 0 auto;
+
+        }
+        .left{width:30%}
+        .middle{width: 70%}
+        .right{display: none}
+        img{width: 25%}
+    }
+    @media screen and (max-width: 700px){
+        #container {
+            width:100%;
+
+
+        }
+        /*.left,.middle,.right{width:100%}*/
+        .left{
+            width: 100%;
+        }
+        .middle{
+            width: 100%;
+        }
+        .right{
+            width: 100%;
+        }
+        img{width: 50%}
+    }
+
+</style>
+<body>
+<div id="container">
+    <div class="left">
+        <ul>
+            <li><a href="#">豆蔻年华</a></li>
+            <li><a href="#">豆蔻年华</a></li>
+            <li><a href="#">豆蔻年华</a></li>
+            <li><a href="#">豆蔻年华</a></li>
+        </ul>
+    </div>
+    <div class="middle">
+        <img src="index/1.jpg">
+        <img src="index/2.jpg">
+        <img src="index/3.jpg">
+        <img src="index/4.jpg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores assumenda, dolorum enim ex nemo quasi qui saepe tempore unde? Ab adipisci aperiam, deleniti dolorum eius eveniet exercitationem ipsa iste nemo non numquam officiis perferendis repellat sint vel. Ad adipisci animi aspernatur beatae culpa cum deleniti, eligendi eum eveniet ex explicabo incidunt laudantium maiores mollitia natus nemo odio perspiciatis, quae quia quis recusandae rerum saepe soluta ullam unde vel veritatis. Ad amet aperiam beatae cum deleniti dolorum error harum hic id impedit inventore ipsam minus mollitia nam, omnis provident quas quidem quisquam sed similique soluta tempore temporibus veniam vitae voluptatibus! Animi cum cupiditate deleniti, dignissimos doloribus, esse in minus molestiae odio officiis perferendis qui quod vero! Animi autem dolores eveniet ex maxime nulla odio, recusandae voluptates. Consequatur ea ipsum laborum, qui quod reprehenderit sint tempora vel. Cum dolorum earum inventore ipsam ipsum laborum libero nemo nesciunt numquam pariatur, praesentium qui quisquam sint tenetur vitae! A amet autem commodi corporis cupiditate deleniti dolore doloribus esse eum ex expedita facilis hic ipsam iure iusto laboriosam laborum minima nam neque nisi odio officia pariatur, perspiciatis possimus praesentium provident quae quaerat quasi quia sequi similique soluta tempore temporibus totam vero voluptates voluptatum! Delectus, esse.</p>
+    </div>
+    <div class="right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores assumenda, dolorum enim ex nemo quasi qui saepe tempore unde? Ab adipisci aperiam, deleniti dolorum eius eveniet exercitationem ipsa iste nemo non numquam officiis perferendis repellat sint vel. Ad adipisci animi aspernatur beatae culpa cum deleniti, eligendi eum eveniet ex explicabo incidunt laudantium maiores mollitia natus nemo odio perspiciatis, quae quia quis recusandae rerum saepe soluta ullam unde vel veritatis. Ad amet aperiam beatae cum deleniti dolorum error harum hic id impedit inventore ipsam minus mollitia nam, omnis provident quas quidem quisquam sed similique soluta tempore temporibus veniam vitae voluptatibus! Animi cum cupiditate deleniti, dignissimos doloribus, esse in minus molestiae odio officiis perferendis qui quod vero! Animi autem dolores eveniet ex maxime nulla odio, recusandae voluptates. Consequatur ea ipsum laborum, qui quod reprehenderit sint tempora vel. Cum dolorum earum inventore ipsam ipsum laborum libero nemo nesciunt numquam pariatur, praesentium qui quisquam sint tenetur vitae! A amet autem commodi corporis cupiditate deleniti dolore doloribus esse eum ex expedita facilis hic ipsam iure iusto laboriosam laborum minima nam neque nisi odio officia pariatur, perspiciatis possimus praesentium provident quae quaerat quasi quia sequi similique soluta tempore temporibus totam vero voluptates voluptatum! Delectus, esse.</p>
+    </div>
+</div>
+
+</body>
+</html>
