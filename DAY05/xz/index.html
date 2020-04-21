@@ -3,18 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="../css/base.css"/>
 </head>
 <body>
+
 <header>
     <iframe class="my_header" src="header.html" frameborder="0" scrolling="0"></iframe>
 </header>
+
+
+
+<!-- 1楼-->
+<div id="main" class="container">
+    <!-- 轮播图-->
+    <div id="mycar" class="carousel" data-ride="carousel">
+        <!-- 图片-->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#">
+                    <img class="w-100" src="../index/index/banner1.png"/>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="w-100" src="../index/index/banner2.png"/>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="w-100" src="../index/index/banner3.png"/>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="w-100" src="../index/index/banner4.png"/>
+                </a>
+            </div>
+        </div>
+        <!-- 指示器-->
+        <ul class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#mycar"></li>
+            <li data-slide-to="1" data-target="#mycar"></li>
+            <li data-slide-to="2" data-target="#mycar"></li>
+            <li data-slide-to="3" data-target="#mycar"></li>
+        </ul>
+        <!-- 左右箭头-->
+        <a href="#mycar" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#mycar" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <!-- 1楼-->
+    <div class="mt-3 mb-5">
+        <!-- 楼层标题-->
+        <div class="navbar navbar-light border-bottom">
+            <a href="#" class="navbar-brand font-weight-bold text-secondary">
+                <img class="mr-2" src="../index/index/computer_icon.png"/>首页推荐 /1F
+            </a>
+        </div>
+        <!-- 两张大图 -->
+        <div class="row floor_top_width">
+            <div  class="p-0 col-lg-7 col-sm-12">
+                <div class="mr-1 bgcolor1 mysize1">
+                    <table></table>
+                    <!-- 第一张图的文字区域-->
+                    <div class="my_width1">
+                        <h5>Apple MacBook Air系列</h5>
+                        <h6 class="my_small my_gray mb-2">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</h6>
+                        <p class="text-primary font-weight-bold">￥6988.00</p>
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                    <div class="float-right myfloat-size">
+                        <img src="../index/index/study_computer_img1.png"/>
+                    </div>
+                </div>
+            </div>
+            <div class="p-0 col-lg-5 col-sm-12 ">
+                <div class=" bgcolor1 mysize1">
+                    <table></table>
+                    <div class="my_width1 ml-5">
+                        <h5>小米Air 金属超轻薄</h5>
+                        <h6 class="my_small my_gray mb-2">酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡</h6>
+                        <p class="text-primary font-weight-bold">￥3488.00</p>
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                    <div class="float-right myfloat-size">
+                        <img src="../index/index/study_computer_img2.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 下面四张小图-->
+        <div class="row mt-1 mr-0 ml-0">
+            <!-- 左图-->
+            <div class="col-lg-5 col-sm-12 p-0 myheight">
+                <div class="card flex-row bgcolor1 border-0 rounded-0 pb-5">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <h5>联想E480C 轻薄系列</h5>
+                        <p class="text-primary">￥5399.00</p>
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                    </div>
+                    <img class="myimg3" src="../index/index/study_computer_img3.png"/>
+                </div>
+            </div>
+            <!-- 右三张-->
+            <div class="col-lg-7 col-sm-12 p-0">
+                <div class="row m-0 pl-1">
+                    <div class="col-4 p-0 pr-1">
+                        <div class="card border-0 rounded-0 bgcolor1">
+                            <img class="myimg3 img-fluid" src="../index/index/study_computer_img4.png"/>
+                            <div class="card-body p-0 text-center">
+                                <span class="my_small">华硕RX310 金属超极本</span>
+                                <p class="text-primary m-0">￥4966.00</p>
+                                <a href="#" class="btn btn-primary my_btn1">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 p-0 pr-1">
+                        <div class="card border-0 rounded-0 bgcolor1">
+                            <img class="myimg3" src="../index/index/study_computer_img4.png"/>
+                            <div class="card-body p-0 text-center">
+                                <span class="my_small">华硕RX310 金属超极本</span>
+                                <p class="text-primary m-0">￥4966.00</p>
+                                <a href="#" class="btn btn-primary my_btn1">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 p-0">
+                        <div class="card border-0 rounded-0 bgcolor1">
+                            <img class="myimg3" src="../index/index/study_computer_img4.png"/>
+                            <div class="card-body p-0 text-center">
+                                <span class="my_small">华硕RX310 金属超极本</span>
+                                <p class="text-primary m-0">￥4966.00</p>
+                                <a href="#" class="btn btn-primary my_btn1">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <footer>
     <iframe class="my_footer" src="footer.html" frameborder="0" scrolling="0"></iframe>
 </footer>
+
+
 </body>
 </html>
