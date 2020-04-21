@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     var input=prompt("请输入消息内容");
+     //var i=input.indexOf("我草");
+     var i=input.search(/([我窝]|wo)([草艹操]|cao    )/i)
+     if(i==-1)
+            document.write(`李然说：${input}`);
+     else
+         alert("包含敏感词！不能送达")
+
+</script>
+
+</body>
+</html>
