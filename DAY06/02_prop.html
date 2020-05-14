@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<img src="img/1.jpg" data-target="img/1-l.jpg" class="my-small">
+<img src="img/2.jpg" data-target="img/2-l.jpg" class="my-small">
+<img src="img/3.jpg" data-target="img/3-l.jpg" class="my-small">
+<img src="img/4.jpg" data-target="img/4-l.jpg" class="my-small">
+<hr/>
+<img src="img/1-l.jpg" class="my-big">
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    $(".my-small").mouseover(function () {
+
+        var src=$(this).attr("data-target");
+        $(".my-big").prop({src});
+    })
+</script>
+
+
+</body>
+</html>

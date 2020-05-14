@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>操作元素的内容和值</h1>
+<form action="">
+    用户名：<input name="uname" type="text"><span></span><br>
+    密码：<input name="upwd" type="password"><span></span><br>
+    <input type="submit" value="提交注册信息">
+</form>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    $(":text").blur(function () {
+        vali(this,3,9,"用户名必须介于3~9位之间！")
+    })
+    function vali(txt,min,max,msg){
+        var $txt=$(txt);
+        $txt.next().html(function () {
+            var length=$txt.val().length;
+            if(length>=min&&length<=max){
+                return `<img src="img/ok.png">`
+            }else {
+                return `<img src="img/err.png">${msg}`
+            }
+
+        })
+    }
+    $(":password").blur(function () {
+        vali(this,6,8,"密码必须介于6~8位之间！")
+    })
+</script>
+</body>
+</html>

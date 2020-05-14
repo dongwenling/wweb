@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+</head>
+<body>
+<h1>工厂函数</h1>
+<button id="btn1">click me(0)</button>
+<button id="b1">click me(0)</button>
+<button id="b2">click me(0)</button>
+<button id="b3">click me(0)</button>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    //1. 查找触发事件的元素
+    var $btn1=$("#btn1");//id选择器
+    //2. 绑定事件处理函数
+    $btn1.click(function(){
+        //3. 查找要修改的元素f
+        var $btn1=$(this);//this->DOM Button
+        //$(this)->jQuery(button)
+        //4. 修改元素
+        var n=parseInt(
+            $btn1.html().slice(9,-1)
+            //"click me(100000000)"
+            // 01234567890
+            //                  -1
+        );
+        n++;
+        console.log(n);
+        //$btn1.html(`click me (${n})`);
+        $btn1.html(`click me(${n})`);
+
+    });
+    var $btn=$("button");
+    $btn.click(function(){
+        var $btn=$(this);
+        var n=parseInt(
+            $btn.html().slice(9,-1)
+        );
+        n++;
+        $btn.html(`click me(${n})`);
+    });
+
+</script>
+
+</body>
+</html>
